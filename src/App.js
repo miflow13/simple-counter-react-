@@ -2,7 +2,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import CounterGame from './CounterGame';
+import Navbar from './navbar';
 import ColorGame from './ColorGame';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './styles.css';
 
 const Homepage = () => (
@@ -18,10 +20,12 @@ const Homepage = () => (
 const App = () => {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/game" element={<CounterGame />} />
         <Route path="/Colorgame" element={<ColorGame />} />
+        {/* Add more routes for other pages if needed */}
       </Routes>
     </Router>
   );

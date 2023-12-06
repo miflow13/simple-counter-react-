@@ -1,18 +1,17 @@
 // CounterGame.js
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Counter from './Counter';
-import Button from './Button';
-import Message from './Message';
-import WelcomeMessage from './WelcomeMessage';
-import ColorGame from './ColorGame';
-import WinMessage from './WinMessage';
-import './styles.css';
-
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Counter from "./Counter";
+import Button from "./Button";
+import Message from "./Message";
+import WelcomeMessage from "./WelcomeMessage";
+import ColorGame from "./ColorGame";
+import WinMessage from "./WinMessage";
+import "./styles.css";
 
 const CounterGame = () => {
   const [count, setCount] = useState(0);
-  const [msg, setMsg] = useState('');
+  const [msg, setMsg] = useState("");
   const navigate = useNavigate();
 
   const onClick = () => {
@@ -30,17 +29,23 @@ const CounterGame = () => {
 
   const onReset = () => {
     setCount(0);
-    setMsg('');
+    setMsg("");
   };
 
   const goToColorGame = () => {
-    navigate('/ColorGame');
+    navigate("/ColorGame");
   };
 
   return (
     <div>
-      <WelcomeMessage />
+      <div>
+       <p>
+       Welcome
+        </p> 
+      </div>
       <div id="container">
+      <h1>Couunter Game</h1>
+      <p>Count to 10 using the count button below</p>
         <Counter count={count} />
         <div className="button-container">
           {count < 10 && <Button onClick={onClick} label="Count" />}

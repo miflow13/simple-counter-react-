@@ -1,59 +1,100 @@
-/* styles.css */
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 body {
-    background-color: #f5f5f5;
-    font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+}
+
+#container {
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.counter-display {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+#display {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.message {
+  font-size: 14px;
+  color: #666;
+  margin-top: 15px;
+}
+
+h1 {
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* styles.css */
+/* ... (previous styles) */
+
+.color-game-container {
     text-align: center;
-    margin: 0;
-    padding: 0;
   }
   
-  #container {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff; /* White background for a clean look */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 10px; /* Slightly rounded corners */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  .color-squares {
+    display: flex;
+    justify-content: center;
   }
   
-  .counter-display {
-    background-color: #f0f0f0; /* Light gray background for counter display */
-    padding: 15px;
-    border-radius: 8px; /* Rounded corners for the display */
-    margin: 15px 0; /* Increased margin for better spacing */
-  }
-  
-  #display {
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .button-container {
-    margin-top: 20px;
-  }
-  
-  button {
-    font-size: 18px;
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #3498db; /* Blue button color */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+  .color-square {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
   }
   
-  button:hover {
-    background-color: #2980b9; /* Darker blue on hover */
+  /* styles.css */
+/* ... (previous styles) */
+
+.navbar {
+    margin-bottom: 20px;
   }
   
-  .message {
-    font-size: 14px;
-    color: #666;
-    margin-top: 15px; /* Adjusted margin for message */
-  }
+  /* Adjust styles as needed for your navbar */
   

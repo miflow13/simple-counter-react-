@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import { Link, useNavigate } from "react-router-dom";
 import Game2 from "./Game2";
+import "./styles.css";
 
 const ColorGame = () => {
   const colorHints = {
@@ -30,6 +31,12 @@ const ColorGame = () => {
       setMessage("You win!");
     }
   };
+
+  const showNextGameButton = () => {
+    <button className="next-game-btn" onClick={goToNextGame}>
+    Next Game
+  </button>
+  }
 
   const handleSquareClick = (clickedColor) => {
     if (clickedColor === targetColor) {
@@ -60,33 +67,26 @@ const ColorGame = () => {
   };
 
   return (
-    <div>
+    <div className="color-game-container">
       <h1>Click the Correct Color</h1>
       <p>Use the hint below to select the corresponding color</p>
-      <p>
-        <h4>
-          Hint: <strong>{colorHints[targetColor]}</strong>
-        </h4>
+      <p className="hint">
+        Hint: <strong>{colorHints[targetColor]}</strong>
       </p>
-      <p>Score: {score}/3</p>
-      <p>{message && <strong>{message}</strong>}</p>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <p className="score">Score: {score}/3</p>
+      <p className="message">{message && <strong>{message}</strong>}</p>
+      <div className="color-squares">
         {colors.map((color, index) => (
           <div
             key={index}
-            style={{
-              width: "100px",
-              height: "100px",
-              backgroundColor: color,
-              margin: "10px",
-              cursor: "pointer",
-            }}
+            className="color-square"
+            style={{ backgroundColor: color }}
             onClick={() => handleSquareClick(color)}
           ></div>
         ))}
       </div>
       <Button onClick={onReset} label="Start Over" />
-      <button onClick={goToNextGame}>Next Game</button>
+     
     </div>
   );
 };
