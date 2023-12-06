@@ -1,7 +1,7 @@
 // Game2.js
-import React from 'react';
-import Counter from './Counter';
-import Button from './Button';
+import React from "react";
+import Counter from "./Counter";
+import Button from "./Button";
 
 const Game2 = ({ onReset }) => (
   <div>
