@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Counter from './Counter';
 import Button from './Button';
 import Message from './Message';
+import WelcomeMessage from './WelcomeMessage';
 import './styles.css';
 
 function App() {
@@ -28,14 +29,18 @@ function App() {
   };
 
   return (
+    <div>
+      <WelcomeMessage/>
     <div id="container">
+      
       <Counter count={count} />
       <div className="button-container">
-        <Button onClick={onClick} label="Click Here!" />
+        <Button onClick={onClick} label="Count" />
         {count === 100 && <Button onClick={onReset} label="Start Over" />}
         <Button onClick={onReset} label="Reset" />
       </div>
-      <Message msg={msg} />
+    </div>
+    <Message msg={msg} />
     </div>
   );
 }
