@@ -3,9 +3,9 @@ import React from "react";
 import Counter from "./Counter";
 import Button from "./Button";
 
-const Game2 = ({ onReset }) => (
+const Game2 = () => (
   <div>
-    <h1>New Game Will Go Here</h1>
+    <p>Hi</p>
   </div>
 );
 

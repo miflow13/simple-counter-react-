@@ -1,6 +1,8 @@
 // ColorGame.js
 import React, { useState, useEffect } from "react";
 import Button from "./Button";
+import { Link, useNavigate } from "react-router-dom";
+import Game2 from "./Game2";
 
 const ColorGame = () => {
   const colorHints = {
@@ -14,21 +16,30 @@ const ColorGame = () => {
   const [targetColor, setTargetColor] = useState("");
   const [score, setScore] = useState(0);
   const [message, setMessage] = useState("");
+  const navigate = useNavigate(); // Hook for programmatic navigation
 
   const getRandomColor = () => {
     const randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
   };
 
+  const isThree = (score) => {
+    console.log("isThree function called");
+    if (score === 2) {
+      console.log("isThree is counting score");
+      setMessage("You win!");
+    }
+  };
+
   const handleSquareClick = (clickedColor) => {
     if (clickedColor === targetColor) {
-      setMessage(
-        `Correct!`
-      );
+      setMessage(`Correct!`);
+      console.log(score);
       setScore(score + 1);
+      isThree(score);
       setTargetColor(getRandomColor());
     } else {
-      setMessage(`Wrong! Game Over. Your score: ${score}`);
+      setMessage(`Wrong! Game Over.`);
       setScore(0);
       setTargetColor(getRandomColor());
     }
@@ -39,19 +50,25 @@ const ColorGame = () => {
   }, []);
 
   const onReset = () => {
-    setScore(0)
+    setScore(0);
     setTargetColor(getRandomColor());
-    setMessage()
+    setMessage("");
+  };
+
+  const goToNextGame = () => {
+    navigate("/Game2"); // Use the navigate hook to navigate to the '/Game2' route
   };
 
   return (
     <div>
       <h1>Click the Correct Color</h1>
-      <p>Use the hint below to select the corrosponding color</p>
+      <p>Use the hint below to select the corresponding color</p>
       <p>
-      <h4>Hint: <strong>{colorHints[targetColor]}</strong></h4>
+        <h4>
+          Hint: <strong>{colorHints[targetColor]}</strong>
+        </h4>
       </p>
-      <p>Score: {score}</p>
+      <p>Score: {score}/3</p>
       <p>{message && <strong>{message}</strong>}</p>
       <div style={{ display: "flex", justifyContent: "center" }}>
         {colors.map((color, index) => (
@@ -69,6 +86,7 @@ const ColorGame = () => {
         ))}
       </div>
       <Button onClick={onReset} label="Start Over" />
+      <button onClick={goToNextGame}>Next Game</button>
     </div>
   );
 };
