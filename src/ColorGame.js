@@ -34,9 +34,9 @@ const ColorGame = () => {
 
   const showNextGameButton = () => {
     <button className="next-game-btn" onClick={goToNextGame}>
-    Next Game
-  </button>
-  }
+      Next Game
+    </button>;
+  };
 
   const handleSquareClick = (clickedColor) => {
     if (clickedColor === targetColor) {
@@ -86,7 +86,6 @@ const ColorGame = () => {
         ))}
       </div>
       <Button onClick={onReset} label="Start Over" />
-     
     </div>
   );
 };

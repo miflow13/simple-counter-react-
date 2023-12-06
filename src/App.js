@@ -1,17 +1,17 @@
 // App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import CounterGame from './CounterGame';
-import Navbar from './navbar';
-import ColorGame from './ColorGame';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import './styles.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import CounterGame from "./CounterGame";
+import Navbar from "./navbar";
+import ColorGame from "./ColorGame";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./styles.css";
 
 const Homepage = () => (
   <div>
     <h1>Welcome to my collection of games!</h1>
     <p>Click the "Start" button to begin the first game.</p>
-    <Link to="/game">
+    <Link to="/CounterGame">
       <button>Start</button>
     </Link>
   </div>
@@ -23,8 +23,8 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/game" element={<CounterGame />} />
-        <Route path="/Colorgame" element={<ColorGame />} />
+        <Route path="/CounterGame" element={<CounterGame />} />
+        <Route path="/ColorGame" element={<ColorGame />} />
         {/* Add more routes for other pages if needed */}
       </Routes>
     </Router>

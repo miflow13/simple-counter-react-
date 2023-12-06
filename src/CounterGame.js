@@ -39,13 +39,11 @@ const CounterGame = () => {
   return (
     <div>
       <div>
-       <p>
-       Welcome
-        </p> 
+        <p>Welcome</p>
       </div>
       <div id="container">
-      <h1>Couunter Game</h1>
-      <p>Count to 10 using the count button below</p>
+        <h1>Couunter Game</h1>
+        <p>Count to 10 using the count button below</p>
         <Counter count={count} />
         <div className="button-container">
           {count < 10 && <Button onClick={onClick} label="Count" />}
