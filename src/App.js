@@ -5,6 +5,7 @@ import Button from './Button';
 import Message from './Message';
 import WelcomeMessage from './WelcomeMessage';
 import Game2 from './Game2';  // Rename the imported component
+import ColorGame from './ColorGame';
 import './styles.css';
 
 const GamePage = ({ onReset }) => (
@@ -20,7 +21,7 @@ const GamePage = ({ onReset }) => (
 );
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(99);
   const [msg, setMsg] = useState('');
 
   const onClick = () => {
@@ -68,7 +69,7 @@ const App = () => {
             </div>
           }
         />
-        <Route path="/game" element={<Game2 onReset={onReset} />} />
+        <Route path="/game" element={<ColorGame onReset={onReset} />} />
       </Routes>
     </Router>
   );
