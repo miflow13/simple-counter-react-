@@ -5,7 +5,7 @@ import Button from "./Button";
 
 const Game2 = () => (
   <div>
-    <p>Hi</p>
+    <h1>Game 2 coming soon</h1>
   </div>
 );
 

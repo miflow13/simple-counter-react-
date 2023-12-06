@@ -3,8 +3,8 @@
 import React from 'react';
 
 const WelcomeMessage = () => {
-  const msg = 'Hello, welcome to my App!'
-  const instruction ='click the button below to get started.'
+  const msg = 'Simple-Counter'
+  const instruction ='click the count button to make the counter increase to 10'
   // Your component logic here
 
   return (

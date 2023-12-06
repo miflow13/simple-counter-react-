@@ -6,7 +6,9 @@ import Button from './Button';
 import Message from './Message';
 import WelcomeMessage from './WelcomeMessage';
 import ColorGame from './ColorGame';
+import WinMessage from './WinMessage';
 import './styles.css';
+
 
 const CounterGame = () => {
   const [count, setCount] = useState(0);
@@ -21,8 +23,8 @@ const CounterGame = () => {
       setMsg(`You have clicked ${count + 1} times!`);
     }
 
-    if (count + 1 === 100) {
-      setMsg('You win! You have clicked 100 times!');
+    if (count + 1 === 10) {
+      setMsg(WinMessage);
     }
   };
 
@@ -32,7 +34,7 @@ const CounterGame = () => {
   };
 
   const goToColorGame = () => {
-    navigate('/Colorgame');
+    navigate('/ColorGame');
   };
 
   return (
@@ -41,14 +43,14 @@ const CounterGame = () => {
       <div id="container">
         <Counter count={count} />
         <div className="button-container">
-          {count < 100 && <Button onClick={onClick} label="Count" />}
-          {count === 100 && (
+          {count < 10 && <Button onClick={onClick} label="Count" />}
+          {count === 10 && (
             <>
               <Button onClick={onReset} label="Start Over" />
               <Button onClick={goToColorGame} label="Next Game" />
             </>
           )}
-          {count !== 100 && <Button onClick={onReset} label="Reset" />}
+          {count !== 10 && <Button onClick={onReset} label="Reset" />}
         </div>
       </div>
       <Message msg={msg} />
