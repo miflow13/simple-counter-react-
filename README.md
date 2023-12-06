@@ -1,6 +1,3 @@
-Certainly! Here's the README template formatted for Markdown:
-
-```markdown
 # Clicker Counter React App
 
 This is a simple React application that allows users to click a button and increments a counter. The app includes features such as milestone messages, animations, and a reset button.
@@ -78,6 +75,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - CSS animations inspired by [Animate.css](https://animate.style/).
 - Sounds from [Freesound](https://freesound.org/).
-```
-
-Feel free to copy and paste this template into your project's README file and customize it further based on your specific details.
