@@ -25,7 +25,6 @@ const App = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/CounterGame" element={<CounterGame />} />
         <Route path="/ColorGame" element={<ColorGame />} />
-        {/* Add more routes for other pages if needed */}
       </Routes>
     </Router>
   );
