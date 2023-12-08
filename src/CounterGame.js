@@ -39,7 +39,7 @@ const CounterGame = () => {
   return (
     <div>
       <div>
-        <p>Welcome</p>
+        <h1 id ="Welcome">Welcome</h1>
       </div>
       <div id="container">
         <h1>Couunter Game</h1>
